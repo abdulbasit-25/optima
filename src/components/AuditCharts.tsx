@@ -15,13 +15,13 @@ import {
 import type { AuditResult, Severity } from "@/lib/audit";
 
 const chartColors = {
-  signal: "#2F6FED",
+  signal: "var(--signal)",
   coral: "#E0524A",
   amber: "#D98A2B",
   mint: "#2FAE79",
-  ink: "#0B1220",
-  muted: "#6D716F",
-  line: "#DEDAD0",
+  ink: "var(--ink)",
+  muted: "var(--muted-foreground)",
+  line: "var(--line)",
 };
 
 const categoryLabels = [
@@ -114,7 +114,7 @@ export function SeverityDonut({ result }: { result: AuditResult }) {
         </div>
       </div>
       <div className="donut-chart-wrap">
-        <ResponsiveContainer width="100%" height={210}>
+        <ResponsiveContainer width="100%" height={190}>
           <PieChart>
             <Pie
               data={data}
@@ -136,7 +136,7 @@ export function SeverityDonut({ result }: { result: AuditResult }) {
               contentStyle={{
                 border: `1px solid ${chartColors.line}`,
                 borderRadius: 0,
-                backgroundColor: "#FBFAF7",
+                backgroundColor: "var(--card)",
                 color: chartColors.ink,
                 fontFamily: "DM Mono, monospace",
                 fontSize: 11,
