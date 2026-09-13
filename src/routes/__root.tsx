@@ -77,33 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "OPTIMA — AI-Powered SEO & Website Optimization" },
-      {
-        name: "description",
-        content:
-          "Analyze your website with OPTIMA, an AI-powered SEO platform for technical insights, performance analysis, and actionable growth recommendations.",
-      },
       { name: "author", content: "OPTIMA" },
-      { property: "og:url", content: "https://optima-arch.vercel.app/" },
-      { property: "og:title", content: "OPTIMA — AI-Powered SEO & Website Optimization" },
-      {
-        property: "og:description",
-        content: "Know what's holding your website back. Turn SEO data into action with OPTIMA.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://optima-arch.vercel.app/og-image.jpg" },
-      { property: "og:image:alt", content: "OPTIMA AI-powered SEO intelligence platform" },
-      { property: "og:image:width", content: "1680" },
-      { property: "og:image:height", content: "945" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "OPTIMA — AI-Powered SEO & Website Optimization" },
-      {
-        name: "twitter:description",
-        content: "Know what's holding your website back. Turn SEO data into action with OPTIMA.",
-      },
-      { name: "twitter:image", content: "https://optima-arch.vercel.app/og-image.jpg" },
-      { name: "twitter:image:alt", content: "OPTIMA AI-powered SEO intelligence platform" },
-      { name: "twitter:site", content: "@optima" },
     ],
     links: [
       {
@@ -111,7 +85,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "manifest", href: "/site.webmanifest" },
-      { rel: "canonical", href: "https://optima-arch.vercel.app/" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
