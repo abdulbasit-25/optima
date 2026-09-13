@@ -70,6 +70,19 @@ export function AppFooter() {
           <span>See your website clearly.</span>
         </p>
         <Link to="/scoring">How scoring works</Link>
+        <a href="https://github.com/abdulbasit-25/optima" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+        <a href="https://lnkd.in/p/drk5Scv2" target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
+        <a
+          href="https://abdulbasit-archer.vercel.app/portfolio/11"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Project portfolio
+        </a>
       </div>
       <a
         className="archer-credit"
