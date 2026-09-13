@@ -24,11 +24,11 @@ import { isValidUrl, runAudit, type AuditResult, type Issue, type Severity } fro
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "OPTIMA — AI-Powered SEO & Website Optimization" },
+      { title: "AI SEO Audit Tool for Technical & On-Page SEO | OPTIMA" },
       {
         name: "description",
         content:
-          "Analyze your website with OPTIMA, an AI-powered SEO platform that uncovers technical issues, improves performance, and provides actionable recommendations for better rankings and growth.",
+          "Run a clear AI SEO audit for any website. Check on-page SEO, technical health, mobile performance, and the fixes that matter most.",
       },
       { property: "og:url", content: "https://optima-arch.vercel.app/" },
       { property: "og:title", content: "OPTIMA — AI-Powered SEO & Website Optimization" },
@@ -50,6 +50,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:image", content: "https://optima-arch.vercel.app/og-image.jpg" },
       { name: "twitter:image:alt", content: "OPTIMA AI-powered SEO intelligence platform" },
     ],
+    links: [{ rel: "canonical", href: "https://optima-arch.vercel.app/" }],
   }),
   component: Index,
 });
@@ -106,9 +107,144 @@ function Index() {
             error={error}
           />
         )}
+
+        <HomepageSeoContent />
       </div>
       <AppFooter />
     </main>
+  );
+}
+
+function HomepageSeoContent() {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://optima-arch.vercel.app/#website",
+        url: "https://optima-arch.vercel.app/",
+        name: "OPTIMA",
+        description:
+          "AI-powered SEO audits for on-page, performance, and technical website health.",
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://optima-arch.vercel.app/#application",
+        name: "OPTIMA",
+        url: "https://optima-arch.vercel.app/",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        description:
+          "A web application that audits on-page SEO, mobile performance, and technical website health.",
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <section className="seo-content" aria-labelledby="seo-content-heading">
+        <div className="seo-content__intro">
+          <p className="section-kicker">THE OPTIMA AUDIT</p>
+          <h2 id="seo-content-heading">A clear SEO audit for your next fix.</h2>
+          <p>
+            An SEO audit checks the signals that help search engines understand, crawl, and measure
+            a page. OPTIMA turns those checks into a plain-English report with priorities.
+          </p>
+        </div>
+        <div className="seo-content__grid">
+          <article>
+            <h3>What OPTIMA checks</h3>
+            <p>
+              OPTIMA checks the title tag, meta description, H1 and heading structure, image alt
+              text, approximate word count, canonical URL, internal and external links, HTTPS, meta
+              robots, robots.txt, sitemap.xml, and the mobile viewport. OPTIMA also reads Google
+              PageSpeed data for mobile performance, including LCP, INP or TBT, and CLS.
+            </p>
+          </article>
+          <article>
+            <h3>Who OPTIMA is for</h3>
+            <p>
+              OPTIMA is for small business owners, freelancers and agencies, marketing teams, and
+              developers preparing a launch or redesign. It gives each audience a fast technical
+              baseline before deeper SEO work.
+            </p>
+          </article>
+          <article>
+            <h3>What the score means</h3>
+            <p>
+              OPTIMA scores available checks from 0 to 100. Passed checks earn full credit, warning
+              checks earn half credit, and critical checks earn no credit. Scores from 0-49 need
+              urgent attention, 50-79 need work, and 80-100 represent a healthy baseline.
+            </p>
+          </article>
+          <article>
+            <h3>What you receive</h3>
+            <p>
+              After you submit a URL, OPTIMA returns an overall score, category scores, grouped
+              issues, plain-English explanations, and a downloadable PDF report. Results are
+              generated for the submitted page and are not published as public URLs.
+            </p>
+          </article>
+          <article>
+            <h3>Why use OPTIMA with another SEO tool</h3>
+            <p>
+              OPTIMA is a focused second opinion. It translates a live page scan into a short list
+              of fixes, while a broader SEO platform can continue to handle keywords, backlinks,
+              rank tracking, and campaign-level analysis.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="seo-faq" aria-labelledby="faq-heading">
+        <div className="seo-content__intro">
+          <p className="section-kicker">COMMON QUESTIONS</p>
+          <h2 id="faq-heading">Questions about SEO audits</h2>
+        </div>
+        <div className="seo-faq__list">
+          <details>
+            <summary>What is an SEO audit?</summary>
+            <p>
+              An SEO audit is a review of a web page&apos;s content, technical setup, crawlability,
+              and performance signals. OPTIMA turns that review into prioritized recommendations.
+            </p>
+          </details>
+          <details>
+            <summary>What does OPTIMA check?</summary>
+            <p>
+              OPTIMA checks on-page HTML signals, technical crawlability, mobile performance, and
+              Core Web Vitals-related measurements from Google PageSpeed Insights.
+            </p>
+          </details>
+          <details>
+            <summary>Does OPTIMA check mobile performance?</summary>
+            <p>
+              Yes. OPTIMA requests the mobile PageSpeed Insights result and reports performance
+              signals such as LCP, INP or TBT, CLS, and the overall performance score.
+            </p>
+          </details>
+          <details>
+            <summary>Is an audit result saved?</summary>
+            <p>
+              OPTIMA displays the audit in the current browser session and can generate a PDF
+              download. OPTIMA does not create a public, crawlable result URL.
+            </p>
+          </details>
+          <details>
+            <summary>Does OPTIMA replace an SEO specialist?</summary>
+            <p>
+              No. OPTIMA provides an automated starting point for technical and on-page checks. An
+              SEO specialist is still needed for strategy, content quality, links, research, and
+              decisions that require business context.
+            </p>
+          </details>
+        </div>
+      </section>
+    </>
   );
 }
 
@@ -132,7 +268,7 @@ function InputScreen({
       <div className="input-screen__copy">
         <p className="eyebrow">AI-POWERED SEO INTELLIGENCE</p>
         <h1>
-          Know what&apos;s <em>holding your site back.</em>
+          Run an SEO audit. <em>Know what to fix first.</em>
         </h1>
         <p className="input-screen__intro">
           Point OPTIMA at a page and it reads it the way a search engine does — on-page signals,
