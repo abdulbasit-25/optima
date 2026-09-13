@@ -14,13 +14,35 @@ import { AppFooter, AppHeader } from "@/components/AppChrome";
 export const Route = createFileRoute("/scoring")({
   head: () => ({
     meta: [
-      { title: "How OPTIMA Scoring Works" },
+      { title: "How OPTIMA Scores Your SEO Audit | Scoring Guide" },
       {
         name: "description",
         content:
-          "Learn how OPTIMA checks on-page SEO, technical health, and performance to calculate a clear website score.",
+          "Learn how OPTIMA scores on-page SEO, technical health, and mobile performance, from critical issues to a healthy 80-100 baseline.",
       },
+      { property: "og:url", content: "https://optima-arch.vercel.app/scoring" },
+      { property: "og:title", content: "How OPTIMA Scores Your SEO Audit | Scoring Guide" },
+      {
+        property: "og:description",
+        content:
+          "Learn how OPTIMA scores on-page SEO, technical health, and mobile performance, from critical issues to a healthy 80-100 baseline.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://optima-arch.vercel.app/og-image.jpg" },
+      { property: "og:image:alt", content: "OPTIMA scoring guide for SEO audits" },
+      { property: "og:image:width", content: "1680" },
+      { property: "og:image:height", content: "945" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "How OPTIMA Scores Your SEO Audit | Scoring Guide" },
+      {
+        name: "twitter:description",
+        content:
+          "Learn how OPTIMA scores on-page SEO, technical health, and mobile performance, from critical issues to a healthy 80-100 baseline.",
+      },
+      { name: "twitter:image", content: "https://optima-arch.vercel.app/og-image.jpg" },
+      { name: "twitter:image:alt", content: "OPTIMA scoring guide for SEO audits" },
     ],
+    links: [{ rel: "canonical", href: "https://optima-arch.vercel.app/scoring" }],
   }),
   component: ScoringPage,
 });
@@ -44,18 +66,35 @@ const categories = [
 ];
 
 function ScoringPage() {
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://optima-arch.vercel.app/scoring#webpage",
+    url: "https://optima-arch.vercel.app/scoring",
+    name: "How OPTIMA Scores Your SEO Audit | Scoring Guide",
+    description:
+      "Learn how OPTIMA scores on-page SEO, technical health, and mobile performance, from critical issues to a healthy 80-100 baseline.",
+    isPartOf: { "@id": "https://optima-arch.vercel.app/#website" },
+  };
+
   return (
     <main className="app-shell scoring-page">
       <div className="app-content">
         <AppHeader />
 
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+        />
+
         <section className="scoring-hero">
           <p className="eyebrow">OPTIMA / SCORING GUIDE</p>
-          <h1>Know what the number means.</h1>
+          <h1>How OPTIMA scores an SEO audit</h1>
           <p className="scoring-hero__intro">
             OPTIMA turns a live website scan into a practical 0-100 score. This page explains what
             we check, how points are awarded, and what to do with the result.
           </p>
+          <p className="scoring-hero__updated">Last updated: September 13, 2026</p>
           <Link to="/" className="secondary-button scoring-hero__action">
             <ScanSearch className="size-4" />
             Run an audit
