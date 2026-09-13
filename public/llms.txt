@@ -1,0 +1,38 @@
+# OPTIMA
+
+> OPTIMA is a web-based SEO audit tool. A user submits one web page URL, and OPTIMA analyzes its on-page SEO, mobile performance, and technical crawlability, returning results in plain English.
+
+## What OPTIMA checks
+
+OPTIMA runs the following checks on a submitted page:
+
+- Title tag and meta description
+- H1 count and heading structure
+- Image alt text and approximate body word count
+- Canonical URL and internal/external links
+- HTTPS, meta robots, robots.txt, and sitemap.xml
+- Mobile viewport configuration
+- Google PageSpeed mobile performance: LCP, INP/TBT, and CLS
+
+## What a user receives after running an audit
+
+- An overall score from 0-100
+- Category scores for on-page SEO, performance, and technical health
+- Issues grouped by severity (critical, warning, passed) with plain-English explanations
+- A downloadable PDF report
+
+Audit results are shown only in the user's current session. They are not published as crawlable result pages, and submitted URLs are not stored or shared.
+
+## What OPTIMA is not
+
+OPTIMA is an automated starting point for a technical SEO review of a single page. It does not perform keyword research, backlink analysis, content strategy, or full-site crawling, and it does not replace an SEO specialist's judgment.
+
+## Primary pages
+
+- Homepage and audit tool: https://optima-arch.vercel.app/
+- Scoring guide (how the 0-100 score is calculated): https://optima-arch.vercel.app/scoring
+- Sitemap: https://optima-arch.vercel.app/sitemap.xml
+
+## Last updated
+
+2026-09-13
