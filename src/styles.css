@@ -789,6 +789,15 @@ input {
   line-height: 1.6;
 }
 
+.scoring-hero__updated {
+  margin: 18px 0 0;
+  color: var(--muted-foreground);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .scoring-hero__action {
   margin-top: 32px;
   width: fit-content;
@@ -857,6 +866,83 @@ input {
 
 .scoring-section--split > div:first-child p + p {
   margin-top: 16px;
+}
+
+.seo-content,
+.seo-faq {
+  border-top: 1px solid var(--line);
+  padding: 58px 0 70px;
+}
+
+.seo-content__intro {
+  max-width: 650px;
+}
+
+.seo-content__intro h2 {
+  max-width: 560px;
+  margin: 10px 0 16px;
+  color: var(--ink);
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.seo-content__intro > p:last-child {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.seo-content__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 38px;
+  background: var(--line);
+}
+
+.seo-content__grid article {
+  min-height: 190px;
+  background: var(--card);
+  padding: 24px;
+}
+
+.seo-content__grid h3 {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.seo-content__grid p,
+.seo-faq details p {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.seo-faq__list {
+  margin-top: 34px;
+  border-top: 2px solid var(--ink);
+}
+
+.seo-faq details {
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.seo-faq summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.seo-faq details p {
+  max-width: 700px;
+  padding-top: 12px;
 }
 
 .scoring-formula {
@@ -1148,7 +1234,8 @@ input {
 
   .scoring-categories,
   .score-bands,
-  .scoring-section--split {
+  .scoring-section--split,
+  .seo-content__grid {
     grid-template-columns: 1fr;
   }
 
